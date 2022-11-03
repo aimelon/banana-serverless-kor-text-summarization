@@ -3,11 +3,15 @@
 
 # In this example: A Huggingface BERT model
 
-from transformers import pipeline
+from transformers import (
+    PreTrainedTokenizerFast,
+    AutoModelForSeq2SeqLM,
+)
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
-    pipeline('fill-mask', model='bert-base-uncased')
+    AutoModelForSeq2SeqLM.from_pretrained("heooo/kobartTest")
+    PreTrainedTokenizerFast.from_pretrained("hyunwoongko/kobart")
 
 if __name__ == "__main__":
     download_model()
